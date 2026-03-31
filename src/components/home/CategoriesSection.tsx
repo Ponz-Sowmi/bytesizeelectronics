@@ -47,7 +47,7 @@ const icons: Record<string, ReactNode> = {
 
 export function CategoriesSection() {
   return (
-    <section className="border-b border-slate-200 bg-white py-16 sm:py-20" id="categories">
+    <section className="border-b border-slate-200 bg-white py-16 sm:py-20" id="what-we-offer">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">

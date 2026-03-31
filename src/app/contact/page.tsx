@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { VisitStoreSection, STORE_ADDRESS_LINES } from "@/components/VisitStoreSection";
 import { CONTACT, SITE_NAME } from "@/lib/site";
 import { ContactForm } from "@/components/ContactForm";
 
@@ -48,13 +49,11 @@ export default function ContactPage() {
                 Address
               </span>
               <span className="leading-relaxed">
-                {CONTACT.addressLine1}
-                <br />
-                {CONTACT.addressLine2}
-                <br />
-                {CONTACT.city} – {CONTACT.postal}
-                <br />
-                {CONTACT.region}, {CONTACT.country}
+                {STORE_ADDRESS_LINES.map((line) => (
+                  <span key={line} className="block">
+                    {line}
+                  </span>
+                ))}
               </span>
             </li>
             <li>
@@ -75,7 +74,7 @@ export default function ContactPage() {
             </li>
           </ul>
           <div className="mt-8">
-            <WhatsAppButton label="Chat on WhatsApp" variant="primary" />
+            <WhatsAppButton label="WhatsApp us" variant="primary" />
           </div>
         </div>
 
@@ -87,6 +86,8 @@ export default function ContactPage() {
           <ContactForm />
         </div>
       </div>
+
+      <VisitStoreSection />
     </div>
   );
 }

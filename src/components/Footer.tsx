@@ -60,8 +60,12 @@ export function Footer() {
               </li>
               <li className="leading-relaxed text-slate-600">
                 {CONTACT.addressLine1}
-                <br />
-                {CONTACT.addressLine2}
+                {CONTACT.addressLine2 ? (
+                  <>
+                    <br />
+                    {CONTACT.addressLine2}
+                  </>
+                ) : null}
                 <br />
                 {CONTACT.city} – {CONTACT.postal}
                 <br />

@@ -5,14 +5,11 @@ export const SITE_TAGLINE =
 
 export const CONTACT = {
   email: "bse2k21@gmail.com",
-  /** Display */
-  phone: "95005 29782",
-  /** tel: / WhatsApp (India) */
+  phone: "+91 95005 29782",
   phoneTel: "+919500529782",
-  /** wa.me — country code + number without + */
   whatsappE164: "919500529782",
-  addressLine1: "Varnathertham, Near Indian Bank",
-  addressLine2: "Meena Doctor Complex",
+  addressLine1: "Meena Doctor Complex",
+  addressLine2: "",
   city: "Harur",
   region: "Tamil Nadu",
   postal: "636903",
@@ -22,6 +19,16 @@ export const CONTACT = {
   stateCode: "33",
 } as const;
 
+/** Your Google Maps place link (Share). Used for “Open in Google Maps”. */
+export const GOOGLE_MAPS_OPEN_URL = "https://share.google/higZHyTinLTxtqjos";
+
+/**
+ * Iframe `src` for the embedded map.
+ * If the share link does not show inside the frame, open your link in Google Maps → Share →
+ * “Embed a map” and paste only the `src` URL here (starts with https://www.google.com/maps/embed).
+ */
+export const GOOGLE_MAPS_EMBED_URL = "https://share.google/higZHyTinLTxtqjos";
+
 /** Indian Rupees — uses en-IN grouping */
 export function formatInr(amount: number): string {
   return `₹${amount.toLocaleString("en-IN", {
@@ -30,10 +37,18 @@ export function formatInr(amount: number): string {
   })}`;
 }
 
+/** Standard WhatsApp template; replace {name} with product or service label. */
+export function whatsappInterestMessage(productOrServiceName: string): string {
+  return `Hello, I am interested in ${productOrServiceName}. Please share price and availability.`;
+}
+
+const WHATSAPP_DEFAULT_INTEREST =
+  "your products and services";
+
 export function whatsappOrderUrl(prefill?: string): string {
   const text =
     prefill ??
-    `Hi ${SITE_NAME}, I'd like a quote / service. Please share details.`;
+    whatsappInterestMessage(WHATSAPP_DEFAULT_INTEREST);
   const params = new URLSearchParams({ text });
   return `https://wa.me/${CONTACT.whatsappE164}?${params.toString()}`;
 }

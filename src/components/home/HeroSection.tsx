@@ -14,12 +14,12 @@ export function HeroSection() {
       />
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
         <p className="text-sm font-medium uppercase tracking-widest text-sky-300">{SITE_NAME}</p>
-        <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-          Affordable computers, laptops, printers &amp; CCTV
+        <h1 className="mt-4 max-w-3xl text-3xl font-bold tracking-tight sm:text-5xl lg:text-6xl lg:leading-tight">
+          Sales &amp; Service for Computers, Printers &amp; CCTV
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
-          Sales and service in Harur — walk-ins at Meena Doctor Complex (Near Indian Bank). We also
-          provide AMC for schools and companies: desktops, CCTV, and printers.
+          Trusted IT solutions in Harur. We provide desktops, laptops, printers, CCTV installation and
+          AMC services for homes, schools and businesses.
         </p>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
           <Link

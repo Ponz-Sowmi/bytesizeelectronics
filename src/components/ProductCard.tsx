@@ -1,11 +1,11 @@
 import Image from "next/image";
 import type { Product } from "@/data/products";
-import { formatInr, whatsappOrderUrl } from "@/lib/site";
+import { formatInr, whatsappInterestMessage, whatsappOrderUrl } from "@/lib/site";
 
 type Props = { product: Product };
 
 export function ProductCard({ product }: Props) {
-  const prefill = `Hi! I'm interested in: ${product.name} (code: ${product.id}). Please confirm price in ₹ and availability.`;
+  const prefill = whatsappInterestMessage(product.name);
   const href = whatsappOrderUrl(prefill);
 
   return (
