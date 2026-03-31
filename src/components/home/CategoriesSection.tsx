@@ -54,8 +54,10 @@ export function CategoriesSection() {
             What we offer
           </h2>
           <p className="mt-3 text-slate-600">
-            Sales and service under one roof — from desktops and laptops to printers and CCTV, plus
-            AMC for institutions and businesses.
+            At our Harur showroom we bring together{" "}
+            <strong className="font-medium text-slate-800">laptop and desktop sales in Harur</strong>,
+            printer and CCTV lines, and the technical backup to keep everything running — including
+            AMC when you want predictable support.
           </p>
         </div>
         <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -72,7 +74,9 @@ export function CategoriesSection() {
                 <span className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">
                   {cat.description}
                 </span>
-                <span className="mt-4 text-sm font-medium text-sky-700">View products →</span>
+                <span className="mt-4 text-sm font-medium text-sky-700">
+                  View products &amp; services →
+                </span>
               </Link>
             </li>
           ))}

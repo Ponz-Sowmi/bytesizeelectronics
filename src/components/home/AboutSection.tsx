@@ -11,14 +11,18 @@ export function AboutSection() {
             </h2>
             <p className="mt-2 text-lg font-medium text-sky-700">{SITE_TAGLINE}</p>
             <p className="mt-6 text-slate-600 leading-relaxed">
-              We focus on practical IT for homes, schools, and local businesses: selling reliable
-              computers and peripherals, fixing what breaks, and keeping systems running with annual
-              maintenance contracts where it makes sense.
+              Many customers first find us when they search for a dependable{" "}
+              <strong className="font-medium text-slate-800">computer shop in Harur</strong> — then
+              stay for printer troubleshooting, network basics, and follow-up service. We keep
+              explanations plain and pricing in ₹ so you know what you are paying for.
             </p>
             <p className="mt-4 text-slate-600 leading-relaxed">
-              Based in Harur, we are easy to reach by phone or WhatsApp — share your requirement
-              (new purchase, repair, or AMC) and we will guide you on models, timelines, and pricing
-              in Indian Rupees.
+              Alongside <strong className="font-medium text-slate-800">laptop and desktop sales in Harur</strong>,
+              we handle <strong className="font-medium text-slate-800">printer service in Harur</strong>{" "}
+              and <strong className="font-medium text-slate-800">CCTV installation in Harur</strong>{" "}
+              for small offices, retail, and institutions. Message on WhatsApp with your layout or
+              fault description — we will suggest the next step, whether it is a visit or an AMC
+              plan.
             </p>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2">
               {[

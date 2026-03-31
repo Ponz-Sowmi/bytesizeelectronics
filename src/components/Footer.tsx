@@ -20,7 +20,7 @@ export function Footer() {
             </p>
             <p className="mt-4 text-xs text-slate-500">
               <a href={SITE_URL} className="hover:text-sky-700">
-                bytesizeelectronics.com
+                www.bytesizeelectronics.com
               </a>
             </p>
           </div>

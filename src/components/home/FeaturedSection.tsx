@@ -22,7 +22,7 @@ export function FeaturedSection() {
             href="/products"
             className="text-sm font-semibold text-sky-700 hover:text-sky-800"
           >
-            View all →
+            View all products &amp; services →
           </Link>
         </div>
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

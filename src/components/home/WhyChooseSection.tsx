@@ -117,7 +117,9 @@ export function WhyChooseSection() {
           Why Choose {SITE_NAME}
         </h2>
         <p className="mt-3 max-w-2xl text-slate-600">
-          Local expertise, clear communication, and support that does not end at the sale.
+          Whether you need <strong className="font-semibold text-slate-800">printer service in Harur</strong>, a
+          new PC, or <strong className="font-semibold text-slate-800">CCTV installation in Harur</strong>, we
+          keep communication clear and stand behind our work after the invoice is paid.
         </p>
         <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {POINTS.map((item) => (

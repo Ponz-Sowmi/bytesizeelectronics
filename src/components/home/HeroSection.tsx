@@ -18,8 +18,11 @@ export function HeroSection() {
           Sales &amp; Service for Computers, Printers &amp; CCTV
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
-          Trusted IT solutions in Harur. We provide desktops, laptops, printers, CCTV installation and
-          AMC services for homes, schools and businesses.
+          Trusted IT support for Harur and nearby areas. Whether you need a reliable{" "}
+          <strong className="font-semibold text-slate-100">computer shop in Harur</strong> for
+          laptop and desktop sales, ongoing <strong className="font-semibold text-slate-100">printer service in Harur</strong>, or{" "}
+          <strong className="font-semibold text-slate-100">CCTV installation in Harur</strong>, we
+          combine sales and service so homes, schools, and businesses stay connected.
         </p>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
           <Link

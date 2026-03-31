@@ -1,19 +1,20 @@
 import Image from "next/image";
 import type { Product } from "@/data/products";
-import { formatInr, whatsappInterestMessage, whatsappOrderUrl } from "@/lib/site";
+import { formatInr, SITE_NAME, whatsappInterestMessage, whatsappOrderUrl } from "@/lib/site";
 
 type Props = { product: Product };
 
 export function ProductCard({ product }: Props) {
   const prefill = whatsappInterestMessage(product.name);
   const href = whatsappOrderUrl(prefill);
+  const imageAlt = `${product.name} — ${SITE_NAME}, computer shop in Harur (sample image)`;
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:border-sky-200 hover:shadow-md">
       <div className="relative aspect-square bg-slate-100">
         <Image
           src={product.image}
-          alt={product.name}
+          alt={imageAlt}
           fill
           className="object-cover transition group-hover:scale-[1.02]"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

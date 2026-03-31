@@ -1,12 +1,26 @@
 import type { Metadata } from "next";
 import { CATEGORIES, PRODUCTS, type CategorySlug } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
-import { SITE_NAME } from "@/lib/site";
+import { SITE_NAME, absoluteSiteUrl } from "@/lib/site";
+
+const productsTitle = "Products & Services | Byte Size Electronics Harur";
+const productsDescription = `${SITE_NAME} in Harur lists computers, laptops, printers, CCTV kits, repairs, and AMC plans. Browse indicative prices in ₹ and enquire on WhatsApp for availability and school or business packages.`;
 
 export const metadata: Metadata = {
-  title: `Products | ${SITE_NAME}`,
-  description:
-    "Computers, laptops, printers, CCTV, and service — sample listings in ₹. Enquire on WhatsApp.",
+  title: { absolute: productsTitle },
+  description: productsDescription,
+  alternates: { canonical: absoluteSiteUrl("/products") },
+  openGraph: {
+    title: productsTitle,
+    description: productsDescription,
+    url: absoluteSiteUrl("/products"),
+    locale: "en_IN",
+    siteName: SITE_NAME,
+  },
+  twitter: {
+    title: productsTitle,
+    description: productsDescription,
+  },
 };
 
 function productsInCategory(slug: CategorySlug) {
@@ -22,9 +36,10 @@ export default function ProductsPage() {
             Products &amp; services
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-slate-600">
-            Indicative prices in Indian Rupees (₹). Stock and final billing may vary — tap{" "}
-            <strong>Enquire on WhatsApp</strong> for an exact quote, GST, and AMC options for schools
-            and companies.
+            From laptop and desktop sales to printer service and{" "}
+            <strong>CCTV installation in Harur</strong>, these are sample listings with indicative
+            prices in ₹ — tap <strong>Enquire on WhatsApp</strong> for stock, GST, and AMC options
+            for schools and companies.
           </p>
         </div>
       </div>
@@ -33,8 +48,10 @@ export default function ProductsPage() {
         {CATEGORIES.map((cat) => {
           const list = productsInCategory(cat.slug);
           return (
-            <section key={cat.slug} id={cat.slug} className="scroll-mt-24">
-              <h2 className="text-2xl font-bold text-slate-900">{cat.title}</h2>
+            <section key={cat.slug} id={cat.slug} className="scroll-mt-24" aria-labelledby={`heading-${cat.slug}`}>
+              <h2 id={`heading-${cat.slug}`} className="text-2xl font-bold text-slate-900">
+                {cat.title}
+              </h2>
               <p className="mt-2 max-w-2xl text-slate-600">{cat.description}</p>
               <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {list.map((p) => (

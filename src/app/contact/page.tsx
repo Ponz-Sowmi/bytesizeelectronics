@@ -1,12 +1,27 @@
 import type { Metadata } from "next";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { VisitStoreSection, STORE_ADDRESS_LINES } from "@/components/VisitStoreSection";
-import { CONTACT, SITE_NAME } from "@/lib/site";
+import { CONTACT, SITE_NAME, absoluteSiteUrl } from "@/lib/site";
 import { ContactForm } from "@/components/ContactForm";
 
+const contactTitle = "Contact Byte Size Electronics | Harur";
+const contactDescription = `Visit ${SITE_NAME} at Meena Doctor Complex, Harur (636903), Tamil Nadu. Call ${CONTACT.phone}, WhatsApp for quick quotes, or email ${CONTACT.email}. Store hours and map on this page.`;
+
 export const metadata: Metadata = {
-  title: `Contact | ${SITE_NAME}`,
-  description: `Reach ${SITE_NAME} in Harur — phone, WhatsApp, or email. GSTIN ${CONTACT.gstin}.`,
+  title: { absolute: contactTitle },
+  description: contactDescription,
+  alternates: { canonical: absoluteSiteUrl("/contact") },
+  openGraph: {
+    title: contactTitle,
+    description: contactDescription,
+    url: absoluteSiteUrl("/contact"),
+    locale: "en_IN",
+    siteName: SITE_NAME,
+  },
+  twitter: {
+    title: contactTitle,
+    description: contactDescription,
+  },
 };
 
 export default function ContactPage() {
@@ -18,8 +33,8 @@ export default function ContactPage() {
             Contact us
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-slate-600">
-            New purchases, repairs, CCTV projects, or AMC for your school or office — call, WhatsApp,
-            or email. Prices discussed in Indian Rupees (₹).
+            Reach our Harur team by phone or WhatsApp ({CONTACT.phone}), visit the store at Meena
+            Doctor Complex, or send email. We reply quickly for quotes, repairs, and AMC.
           </p>
         </div>
       </div>
